@@ -43,8 +43,12 @@ https://www.baidu.com/img/baidu_jgylogo3.gif
 - [X] 找出在线的产品套餐
 - [X] 找出套餐对应的订单
 - [X] 秀梅
-
-
-
-
-   
+** [#B] magit-mode
+*** 常规操作
+| command | explain                                 | order |
+|---------+-----------------------------------------+-------|
+| M-m g s | 查看当前git项目的status                 |     1 |
+| s       | 在magit status buffer中，stage 一个文件 |     2 |
+| S       | 如上，stage所有unstage文件              |     3 |
+| c       | commit                                  |     1 |
+| c       | the same.                               | 3     |
