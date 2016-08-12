@@ -51,4 +51,6 @@ https://www.baidu.com/img/baidu_jgylogo3.gif
 | s       | 在magit status buffer中，stage 一个文件 |     2 |
 | S       | 如上，stage所有unstage文件              |     3 |
 | c       | commit                                  |     1 |
-| c       | the same.                               | 3     |
+| c       | the same.                               |     3 |
+| P       | 进入Push to remote模式                  |     3 |
+| F       | 进入Pull模式                            | 3     |
