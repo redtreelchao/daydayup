@@ -1,0 +1,50 @@
+#+FILETAGS :test:study:emacs:
+#+SEQ_TODO: REPORT(r) BUG(b) | FIXED(f)
+#+SEQ_TODO: TODO(!T) | DONE(D@) CANCELED(C@/!)
+* study emacs                                                         :emacs:
+** spacemacs [50%] 
+
+*** DONE 修改默认的下载地址为某个国内镜像
+    CLOSED: [2016-08-11 周四 14:04]
+    - State "DONE"       from              [2016-08-11 周四 14:04] \\
+      done done done
+在打开emacs之前先修改.emacs.d/init.el添加 如下代码。之后将代码调整到.spacemacs 的user-init()里面
+ #+BEGIN_SRC emacs-elisp
+ (setq configuration-layer--elpa-archives
+         '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
+           ("org-cn"   . "http://elpa.zilongshanren.com/org/")
+           ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/"))
+         )
+ #+END_SRC
+
+*** TODO 其他的配置
+
+** [#A] org-mode
+
+*** 设置项目目录
+#+BEGIN_SRC emacs-lisp
+(setq org-agenda-files (list "c:/gitspace/daydayup"
+                           ))
+
+#+END_SRC
+*** keybindings
+| keybinding      | means                            | order |
+|-----------------+----------------------------------+-------|
+| C-c ^           | 将光标的列进行排序，alpha/number |     1 |
+| C-c 竖线        | 生成表格,(5x2)                   |     2 |
+| C-RET           | 生成同级标题                           |   2   |
+| C-c C-t/S-RIGHT | 将任务标记为 TODO/DONE/NONE      |     3 |
+| C-c C-c         | 将表格格式化                     |     4 |
+
+https://www.baidu.com/img/baidu_jgylogo3.gif
+*** order
+ 下面要导出一些在线商品的套餐数据，它包括以下几步 [4/4]
+- [X] 找出在线的PDS产品ID
+- [X] 找出在线的产品套餐
+- [X] 找出套餐对应的订单
+- [X] 秀梅
+
+
+
+
+   
