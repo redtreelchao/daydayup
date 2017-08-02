@@ -23,7 +23,7 @@ ishare/爱分享/想享/享想
 - 强：成交。污：成效 & 花钱
 - 有baidu统计
 *** 步骤
-**** 项目选型
+**** TODO 项目选型
 基于哪个语言项目进行开发 ？来做接口
 - [X] golang: revel
 - [ ] python, flask, eve

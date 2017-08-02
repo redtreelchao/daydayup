@@ -54,3 +54,4 @@ https://www.baidu.com/img/baidu_jgylogo3.gif
 | c       | the same.                               |     3 |
 | P       | 进入Push to remote模式                  |     3 |
 | F       | 进入Pull模式                            | 3     |
+*** 安装步骤
