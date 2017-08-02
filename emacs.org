@@ -19,6 +19,11 @@
 
 *** TODO 其他的配置
 
+**** 重新启动配置文件的命令: M-m q r
+**** 安装插件
+在.spacemacs中的dotspacemacs-configuration-laryers添加插件，即可。
+**** 插件在哪？
+
 ** [#A] org-mode
 
 *** 设置项目目录
@@ -38,7 +43,7 @@
 
 https://www.baidu.com/img/baidu_jgylogo3.gif
 *** order
- 下面要导出一些在线商品的套餐数据，它包括以下几步 [4/4]
+  下面要导出一些在线商品的套餐数据，它包括以下几步 [4/4]
 - [X] 找出在线的PDS产品ID
 - [X] 找出在线的产品套餐
 - [X] 找出套餐对应的订单
@@ -55,3 +60,4 @@ https://www.baidu.com/img/baidu_jgylogo3.gif
 | P       | 进入Push to remote模式                  |     3 |
 | F       | 进入Pull模式                            | 3     |
 *** 安装步骤
+在.spacemacs中的dotspacemacs-configuration-laryers添加插件:git/version-control，即可。
