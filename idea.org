@@ -17,6 +17,8 @@ ishare/爱分享/想享/享想
 这是一个分享模式的互联网交互。它有一些要点：
 - 在金钱方面必需是免费的
 - 通过微信进行传播
+- 有效期
+- GPS定位
 - 权限模式：免费、标准、高级
 > 免费：发放数量2/天，1个在线。标准：发放数量10/天。5个在线。年费300￥。
 - 用户属性：个人、强/污、性别、年龄；
@@ -29,18 +31,27 @@ ishare/爱分享/想享/享想
 - [ ] python, flask, eve
 - [ ] php
 前端使用amazeui react，做纯前端。
-- [X] amazeui react
+- [ ] amazeui react
+- [X] vue
+数据库使用
+- [ ] mysql 阿里云的服务器，在自己的机器上搭建server
+- [ ] mysql 阿里云的服务器，在54yayi的服务器上搭建server
+
+
+
 **** TODO 搭建开发环境 [/]
 - [ ] github使用1个。分别建两个目录对应接口和前端
+- [ ] 自己搭建的gogs的git server
 - [ ] 配置本地开发环境
 - [ ] 搭建线上运行环境
 **** DB表设计
-| 表名 | field 1 | 2       | 3        | 4       | 5           | 6            | 7            | 8      |
-|------+---------+---------+----------+---------+-------------+--------------+--------------+--------|
-| user | id      | name    | password | wx_name | wx_pic      | open_id      | date_created | status |
-| log  | id      | user_id | type     | val_num | val_content | date_created | memo         | status |
-| dict | id      | type    | name     | value   | value2      | date_created |              |        |
-|      |         |         |          |         |             |              |              |        |
+| 表名         | field 1 | 2       | 3        | 4        | 5           | 6            | 7            | 8      |   |
+|--------------+---------+---------+----------+----------+-------------+--------------+--------------+--------+---|
+| user         | id      | name    | password | wx_name  | wx_pic      | open_id      | create_date  | status |   |
+| user_address | id      | user_id | mobile   | province | city        | address      | create_date  | update_date |   |
+| log          | id      | user_id | type     | val_num  | val_content | date_created | memo         | status |   |
+| dict         | id      | type    | name     | value    | value2      | date_created |              |        |   |
+| goods        | user_id   |goods_name | cat_id     |          |             |              |              |        |   |
 
 
 

@@ -17,7 +17,7 @@
          )
  #+END_SRC
 
-*** TODO 其他的配置
+*** TODO 常用命令
 
 **** 重新启动配置文件的命令: M-m q r
 **** 安装插件
@@ -31,6 +31,7 @@
 (setq org-agenda-files (list "c:/gitspace/daydayup"
                            ))
 
+
 #+END_SRC
 *** keybindings
 | keybinding      | means                            | order |
@@ -42,12 +43,7 @@
 | C-c C-c         | 将表格格式化                     |     4 |
 
 https://www.baidu.com/img/baidu_jgylogo3.gif
-*** order
-  下面要导出一些在线商品的套餐数据，它包括以下几步 [4/4]
-- [X] 找出在线的PDS产品ID
-- [X] 找出在线的产品套餐
-- [X] 找出套餐对应的订单
-- [X] 秀梅
+
 ** [#B] magit-mode
 *** 常规操作
 | command | explain                                 | order |
