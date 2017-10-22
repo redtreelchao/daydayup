@@ -3,16 +3,27 @@
   |--------------+------------+------------+----+----|
   | redtreelchao | 2016-08-12 | first init |    |    |
   |              |            |            |    |    | 
-** ishare
+** iprunus
 *** 名字
-ishare/爱分享/想享/享想
+爱李子
 *** 分享什么？
-分享既免费送.送一切可送之物.
-**** 找人陪看电影
-- 时间：将要发生的时间
-- 地点：我的所在地，发布所在地。有图上有真像（2张）
+分享既免费送.送一切可送之物.只收取运费。
+
+- 有效时间：过期自动下架
+- 地点：我的所在地，发布所在地。
 - 人物：分享几份，性别、年龄
 - 事件：领取，赞/踩
+- 运费：到付（如果需要付运费），或者0元。
+- 图片说明：有图上有真像（1-6张）
+
+**** 例子：找人陪看电影
+- 有效时间：2017-10-10 15:30前
+- 地点：某家电影院的地址
+- 人物：30岁的未婚女性
+- 运费：0元
+- 事件：领取
+- 图片说明：已经购买了电影票的订单或者电影票。
+
 *** 思路
 这是一个分享模式的互联网交互。它有一些要点：
 - 在金钱方面必需是免费的
@@ -32,10 +43,11 @@ ishare/爱分享/想享/享想
 - [ ] php
 前端使用amazeui react，做纯前端。
 - [ ] amazeui react
-- [X] vue
+- [ ] vue
+- [X] SUI Mobile @ http://m.sui.taobao.org/components/
 数据库使用
 - [ ] mysql 阿里云的服务器，在自己的机器上搭建server
-- [ ] mysql 阿里云的服务器，在54yayi的服务器上搭建server
+- [X] mysql 阿里云的服务器，在54yayi的服务器上搭建server
 
 
 
@@ -45,13 +57,15 @@ ishare/爱分享/想享/享想
 - [ ] 配置本地开发环境
 - [ ] 搭建线上运行环境
 **** DB表设计
-| 表名         | field 1 | 2       | 3        | 4        | 5           | 6            | 7            | 8      |   |
-|--------------+---------+---------+----------+----------+-------------+--------------+--------------+--------+---|
-| user         | id      | name    | password | wx_name  | wx_pic      | open_id      | create_date  | status |   |
-| user_address | id      | user_id | mobile   | province | city        | address      | create_date  | update_date |   |
-| log          | id      | user_id | type     | val_num  | val_content | date_created | memo         | status |   |
-| dict         | id      | type    | name     | value    | value2      | date_created |              |        |   |
-| goods        | user_id   |goods_name | cat_id     |          |             |              |              |        |   |
+lichao@139.196.80.252 juchi/iprunus
+| table name       | state          |
+|------------------+----------------|
+| ip_goods_extends | 商品扩展表     |
+| ip_goods_info    | 商品表         |
+| ip_order_info    | 订单表         |
+| ip_user_address  | 用户收货地址表 |
+| ip_user_extends  | 用户扩展表     |
+| ip_user_info     | 用户表         |
 
 
 
