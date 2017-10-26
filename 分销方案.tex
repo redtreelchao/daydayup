@@ -1,0 +1,111 @@
+% Created 2017-10-26 四 14:36
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{lichao}
+\date{\today}
+\title{分销方案}
+\hypersetup{
+ pdfauthor={lichao},
+ pdftitle={分销方案},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.3.2 (Org mode 9.1.2)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\#+FILETAGS :方案:分销方案:
+\section{分销方案}
+\label{sec:org6251bd4}
+\begin{center}
+\begin{tabular}{lll}
+author & date & memo\\
+\hline
+lichao & 2017/10/16 & init\\
+ &  & \\
+\end{tabular}
+\end{center}
+\subsection{会议沟通}
+\label{sec:org274869e}
+会议部门：开发/采购/财务
+\section{具体内容}
+\label{sec:org327c16e}
+新增加一个大菜单 \textbf{分销系统}
+\subsection{类别有两种}
+\label{sec:org50c8e67}
+\begin{itemize}
+\item 由公司仓库发货的，才走此 \textbf{分销系统}
+\item 直接由市场发往经销商的，暂时走原方案：钉钉流程
+\end{itemize}
+\subsection{分销商}
+\label{sec:org4ad51ea}
+分销商属性与供应商一样，只是类型不同。原来系统中获取供应商的方法，添加上类型默认是供应商。
+\subsection{分销单}
+\label{sec:orgeda641c}
+由采购部创建分销单，作为与分销商的一次合作。
+主要属性有：
+\begin{itemize}
+\item 分销商/回款时间/回款金额（动态计算）
+\item 销售商品/分销价/分销数/已分销数
+\item 关联分销出库单
+\item 在分销单详情中，要列出出库单的状态。
+\begin{itemize}
+\item 单号，创建时间，是否出库，出库时间
+\item 可添加/删除对应的出库单，此操作要更新关联出库单的商品数到已分销商品数中。
+\end{itemize}
+\item 分销单的出库状态
+\begin{itemize}
+\item 已删除（没有关联出库单时，可以删除）
+\item 待出库
+\item 部分出库（有已分销数，但不全一致时）
+\item 待出库结束（商品数量一致，但出库状态是未出库状态）。以下情况会引起此状态的变化
+\begin{itemize}
+\item 人工修改分销数
+\item 自动创建分销出库单时
+\item 添加/删除出库单时
+\end{itemize}
+\item 已出库（扫描 \textbf{待出库结束} 状态的分销单，若所有出库单均已出库时，变成此状态）
+\end{itemize}
+\item 分销单的结算状态( 已出库状态的分销单，可进入结算流程)
+\begin{itemize}
+\item 待出批次
+\item 已生批次
+\end{itemize}
+\end{itemize}
+
+\subsection{分销出库单}
+\label{sec:org0e3e50d}
+在分销单列表上，针对未完结的分销单，可生成分销出库单。系统自动创建分销出库单，并与分销单关联。\\
+\begin{itemize}
+\item 一个分销单在未全出之前可以 多次生成分销出库单
+\item 自动创建分销出库单时，要弹出页面，可修改待分销商品数（分销数-已分销数）
+\item 当分销数与已分销数一致时，分销单的状态变为待出库结束
+\end{itemize}
+\subsection{分销商回款调整}
+\label{sec:orgaa1301c}
+与供应商的结算调整一致。由采购人员日常添加。（尽量使用已经有表）
+\subsection{分销回款批次}
+\label{sec:orgbfae181}
+与采购单的结算批次一致
+\begin{itemize}
+\item 状态有： \textbf{未申请/已申请/已回款}
+\item 可设置调整金额明细
+\item 不需要开票信息等
+\item 财务有权限将 \textbf{已申请} 的变成 \textbf{已回款}
+\end{itemize}
+\end{document}

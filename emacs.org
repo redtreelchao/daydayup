@@ -21,11 +21,33 @@
 *** TODO 常用命令
 
 **** 重新启动配置文件的命令: M-m q r
+**** Emacs·窗口最大的toggle:M-f10，命令：toggle-frame-maximized
 **** 安装插件
 在.spacemacs中的dotspacemacs-configuration-laryers添加插件，即可。
 **** 插件在哪？
 
-** [#A] org-mode :: [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html][神器中的神器org-mode之入门篇]]
+** [#A] org-mode :: 
+下面是搜集来的网络文章链接
+- [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html][神器中的神器org-mode之入门篇]]
+- [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034][ORG-MODE入门]]
+- [[http://orgmode.org/orgcard.txt][Org-Mode Reference Card (for version 7.8.11)]]
+
+*** 内容元数据，如BEGIN_SRC
+#+BEGIN_SRC 
+s    #+begin_src ... #+end_src 
+e    #+begin_example ... #+end_example  : 单行的例子以冒号开头
+q    #+begin_quote ... #+end_quote      通常用于引用，与默认格式相比左右都会留出缩进
+v    #+begin_verse ... #+end_verse      默认内容不换行，需要留出空行才能换行
+c    #+begin_center ... #+end_center 
+l    #+begin_latex ... #+end_latex 
+L    #+latex: 
+h    #+begin_html ... #+end_html 
+H    #+html: 
+a    #+begin_ascii ... #+end_ascii 
+A    #+ascii: 
+i    #+index: line 
+I    #+include: line
+#+END_SRC
 
 *** 设置项目目录
 #+BEGIN_SRC emacs-lisp
