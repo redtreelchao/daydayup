@@ -34,6 +34,11 @@ ishare/爱分享/想享/享想
 | log  | id      | user_id | type     | val_num | val_content | date_created | memo         | status |
 | dict | id      | type    | name     | value   | value2      | date_created |              |        |
 |      |         |         |          |         |             |              |              |        |
+|      |         |         |          |         |             |              |              |        |
+|      |         |         |          |         |             |              |              |        |
+|      |         |         |          |         |             |              |              |        |
+|      |         |         |          |         |             |              |              |        |
+|      |         |         |          |         |             |              |              |        |
 
 
 
