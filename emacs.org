@@ -1,3 +1,4 @@
+#+TITLE :learn spacemacs
 #+FILETAGS :test:study:emacs:
 #+SEQ_TODO: REPORT(r) BUG(b) | FIXED(f)
 #+SEQ_TODO: TODO(!T) | DONE(D@) CANCELED(C@/!)
@@ -17,32 +18,56 @@
          )
  #+END_SRC
 
-*** TODO 其他的配置
+*** TODO 常用命令
 
-** [#A] org-mode
+**** 重新启动配置文件的命令: M-m q r
+**** Emacs·窗口最大的toggle:M-f10，命令：toggle-frame-maximized
+**** 安装插件
+在.spacemacs中的dotspacemacs-configuration-laryers添加插件，即可。
+**** 插件在哪？
+
+** [#A] org-mode :: 
+下面是搜集来的网络文章链接
+- [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html][神器中的神器org-mode之入门篇]]
+- [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034][ORG-MODE入门]]
+- [[http://orgmode.org/orgcard.txt][Org-Mode Reference Card (for version 7.8.11)]]
+
+*** 内容元数据，如BEGIN_SRC
+#+BEGIN_SRC 
+s    #+begin_src ... #+end_src 
+e    #+begin_example ... #+end_example  : 单行的例子以冒号开头
+q    #+begin_quote ... #+end_quote      通常用于引用，与默认格式相比左右都会留出缩进
+v    #+begin_verse ... #+end_verse      默认内容不换行，需要留出空行才能换行
+c    #+begin_center ... #+end_center 
+l    #+begin_latex ... #+end_latex 
+L    #+latex: 
+h    #+begin_html ... #+end_html 
+H    #+html: 
+a    #+begin_ascii ... #+end_ascii 
+A    #+ascii: 
+i    #+index: line 
+I    #+include: line
+#+END_SRC
 
 *** 设置项目目录
 #+BEGIN_SRC emacs-lisp
 (setq org-agenda-files (list "/Users/lichao/gitspace/daydayup"
                            ))
 
+
 #+END_SRC
 *** keybindings
-| keybinding      | means                            | order |
-|-----------------+----------------------------------+-------|
-| C-c ^           | 将光标的列进行排序，alpha/number |     1 |
-| C-c 竖线        | 生成表格,(5x2)                   |     2 |
-| C-RET           | 生成同级标题                     |     2 |
-| C-c C-t/S-RIGHT | 将任务标记为 TODO/DONE/NONE      |     3 |
-| C-c C-c         | 将表格格式化                     |     4 |
+| keybinding      | means                               | order |
+|-----------------+-------------------------------------+-------|
+| TAB             | 跳列。在一行的尾部，TAB可以增加一行 |     0 |
+| S-TAB           | 反向跳列                            |     0 |
+| C-c 竖线        | 生成表格,(5x2)                      |     2 |
+| C-RET           | 生成同级标题                        |     2 |
+| C-c C-t/S-RIGHT | 将任务标记为 TODO/DONE/NONE         |     3 |
+| C-c C-c         | 将表格格式化                        |     4 |
+| C-c ^           | 将光标的列进行排序，alpha/number    |     5 |
 
 https://www.baidu.com/img/baidu_jgylogo3.gif
-*** order
- 下面要导出一些在线商品的套餐数据，它包括以下几步 [4/4]
-- [X] 找出在线的PDS产品ID
-- [X] 找出在线的产品套餐
-- [X] 找出套餐对应的订单
-- [X] 秀梅
 ** [#B] magit-mode
 *** 常规操作
 | command | explain                                 | order |
@@ -53,4 +78,6 @@ https://www.baidu.com/img/baidu_jgylogo3.gif
 | c       | commit                                  |     1 |
 | c       | the same.                               |     3 |
 | P       | 进入Push to remote模式                  |     3 |
-| F       | 进入Pull模式                            | 3     |
+| F       | 进入Pull模式                            |     3 |
+*** 安装步骤
+    在.spacemacs中的dotspacemacs-configuration-laryers添加插件:git/version-control，即可。
