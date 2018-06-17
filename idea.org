@@ -58,7 +58,7 @@
 - [ ] 配置本地开发环境
 - [ ] 搭建线上运行环境
 **** DB表设计
-| 表名 | field 1 | 2       | 3        | 4       | 5           | 6            | 7            | 8      |
+| 表名  | field 1 | 2       | 3        | 4       | 5           | 6            | 7            | 8      |
 |------+---------+---------+----------+---------+-------------+--------------+--------------+--------|
 | user | id      | name    | password | wx_name | wx_pic      | open_id      | date_created | status |
 | log  | id      | user_id | type     | val_num | val_content | date_created | memo         | status |

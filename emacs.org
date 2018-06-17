@@ -70,14 +70,14 @@ I    #+include: line
 https://www.baidu.com/img/baidu_jgylogo3.gif
 ** [#B] magit-mode
 *** 常规操作
-| command | explain                                 | order |
-|---------+-----------------------------------------+-------|
-| M-m g s | 查看当前git项目的status                 |     1 |
-| s       | 在magit status buffer中，stage 一个文件 |     2 |
-| S       | 如上，stage所有unstage文件              |     3 |
-| c       | commit                                  |     1 |
-| c       | the same.                               |     3 |
-| P       | 进入Push to remote模式                  |     3 |
-| F       | 进入Pull模式                            |     3 |
+| command | explain                                               | order |
+|---------+-------------------------------------------------------+-------|
+| M-m g s | 查看当前git项目的status                               |     1 |
+| s       | 在magit status buffer中，stage 一个文件               |     2 |
+| S       | 如上，stage所有unstage文件                            |     3 |
+| c       | commit,填写message。然后按：C-c C-c保存，并进入下一步 |     1 |
+| c       | the same.                                             |     3 |
+| P       | 进入Push to remote模式                                |     3 |
+| F       | 进入Pull模式                                          |     3 |
 *** 安装步骤
     在.spacemacs中的dotspacemacs-configuration-laryers添加插件:git/version-control，即可。
