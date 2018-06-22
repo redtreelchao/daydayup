@@ -1,0 +1,145 @@
+% Created 2017-11-06 一 17:51
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+\author{lichao}
+\date{\today}
+\title{iprunus.com}
+\hypersetup{
+ pdfauthor={lichao},
+ pdftitle={iprunus.com},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.3.2 (Org mode 9.1.2)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Ideas}
+\label{sec:org4a85412}
+\begin{center}
+\begin{tabular}{lrl}
+author & date & reason\\
+\hline
+redtreelchao & 2016-08-12 & first init\\
+ &  & \\
+\end{tabular}
+\end{center}
+
+
+
+
+\subsection{iprunus}
+\label{sec:org7d9a20d}
+\subsubsection{名字}
+\label{sec:org507bd87}
+爱李子/小李子
+\subsubsection{分享什么？}
+\label{sec:orgc9c8f2f}
+分享既免费送.送一切可送之物.只收取运费。
+
+\begin{itemize}
+\item 有效时间：过期自动下架
+\item 地点：我的所在地，发布所在地。
+\item 人物：分享几份，性别、年龄
+\item 事件：领取，赞/踩
+\item 运费：到付（如果需要付运费），或者0元。
+\item 图片说明：有图上有真像（1-6张）
+\end{itemize}
+
+\begin{enumerate}
+\item 例子：找人陪看电影
+\label{sec:org7f86ef3}
+\begin{itemize}
+\item 有效时间：2017-10-10 15:30前
+\item 地点：某家电影院的地址
+\item 人物：30岁的未婚女性
+\item 运费：0元
+\item 事件：领取
+\item 图片说明：已经购买了电影票的订单或者电影票。
+\end{itemize}
+\end{enumerate}
+
+\subsubsection{思路}
+\label{sec:org25e9631}
+这是一个分享模式的互联网交互。它有一些要点：
+\begin{itemize}
+\item 在金钱方面必需是免费的
+\item 通过微信进行传播
+\item 有效期
+\item GPS定位
+\item 权限模式：免费、标准、高级
+\end{itemize}
+> 免费：发放数量2/天，1个在线。标准：发放数量10/天。5个在线。年费300￥。
+\begin{itemize}
+\item 用户属性：个人、强/污、性别、年龄；
+\item 强：成交。污：成效 \& 花钱
+\item 有baidu统计
+\end{itemize}
+\subsubsection{步骤}
+\label{sec:org11f0a8c}
+\begin{enumerate}
+\item 项目选型
+\label{sec:orga7df05b}
+基于哪个语言项目进行开发 ？来做接口
+\begin{itemize}
+\item $\boxtimes$ golang: revel
+\item $\square$ python, flask, eve
+\item $\square$ php
+\end{itemize}
+前端使用amazeui react，做纯前端。
+\begin{itemize}
+\item $\square$ amazeui react
+\item $\square$ vue
+\item $\boxtimes$ SUI Mobile @ \url{http://m.sui.taobao.org/components/}
+\end{itemize}
+数据库使用
+\begin{itemize}
+\item $\square$ mysql 阿里云的服务器，在自己的机器上搭建server
+\item $\boxtimes$ mysql 阿里云的服务器，在54yayi的服务器上搭建server
+\end{itemize}
+
+
+
+\item {\bfseries\sffamily TODO} 搭建开发环境 [/]
+\label{sec:orgedb638d}
+\begin{itemize}
+\item $\square$ github使用1个。分别建两个目录对应接口和前端
+\item $\square$ 自己搭建的gogs的git server
+\item $\square$ 配置本地开发环境
+\item $\square$ 搭建线上运行环境
+\end{itemize}
+\item DB表设计
+\label{sec:org72866da}
+lichao@139.196.80.252 juchi/iprunus
+\begin{center}
+\begin{tabular}{ll}
+table name & state\\
+\hline
+ip\(_{\text{goods}}\)\(_{\text{extends}}\) & 商品扩展表\\
+ip\(_{\text{goods}}\)\(_{\text{info}}\) & 商品表\\
+ip\(_{\text{order}}\)\(_{\text{info}}\) & 订单表\\
+ip\(_{\text{user}}\)\(_{\text{address}}\) & 用户收货地址表\\
+ip\(_{\text{user}}\)\(_{\text{extends}}\) & 用户扩展表\\
+ip\(_{\text{user}}\)\(_{\text{info}}\) & 用户表\\
+\end{tabular}
+\end{center}
+\end{enumerate}
+\end{document}
