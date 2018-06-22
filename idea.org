@@ -1,9 +1,16 @@
+#+TITLE: iprunus.com
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{SimSun}
+
 * Ideas
-  | author       |       date | reason     | .. | .. |
-  |--------------+------------+------------+----+----|
-  | redtreelchao | 2016-08-12 | first init |    |    |
-  |              |            |            |    |    |
-  |              |            |            |    |    |
+  | author       |       date | reason     |
+  |--------------+------------+------------|
+  | redtreelchao | 2016-08-12 | first init |
+  |              |            |            |
+
+
+  
+
 ** iprunus
 *** 名字
 爱李子/小李子
@@ -71,4 +78,3 @@ lichao@139.196.80.252 juchi/iprunus
 
 
   
-
