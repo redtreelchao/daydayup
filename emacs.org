@@ -26,7 +26,7 @@
 在.spacemacs中的dotspacemacs-configuration-laryers添加插件，即可。
 **** 插件在哪？
 
-** [#A] org-mode :: 
+** TODO [#A] org-mode :: 
 下面是搜集来的网络文章链接
 - [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html][神器中的神器org-mode之入门篇]]
 - [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034][ORG-MODE入门]]
@@ -48,7 +48,7 @@ A    #+ascii:
 i    #+index: line 
 I    #+include: line
 #+END_SRC
-
+*** 
 *** 设置项目目录
 #+BEGIN_SRC emacs-lisp
 (setq org-agenda-files (list "/Users/lichao/gitspace/daydayup"
@@ -68,6 +68,33 @@ I    #+include: line
 | C-c ^           | 将光标的列进行排序，alpha/number    |     5 |
 
 https://www.baidu.com/img/baidu_jgylogo3.gif
+** 列表标题快捷键
+#+CAPTION: 折叠
+| 快捷键 | 说明                                                    |   |
+| S-TAB  | 循环切换整个文档的大纲状态（折叠/打开下一级、打开全部） |   |
+| TAB    | 循环切换光标所在的大纲状态                                           |   |
+#+CAPTION: 大纲或者列表间的移动
+| 快捷键    | 说明                    |
+|-----------+-------------------------|
+| C-c C-n/p | 移动到下/上一个标题     |
+| C-c C-f/b | 移动到同一级的下/上标题 |
+| C-c C-u   | 跳到上一级标题          |
+| C-c C-j   | 切换到大纲预览状态      |
+#+CAPTION: 基于大纲/标题的编辑
+| 快捷键         | 说明                                               |
+|----------------+----------------------------------------------------|
+| M-RET          | 插入一个同级别的标题                               |
+| M-S-RET        | 插入一个同级别的TODO标题                           |
+| M-LEFT/RIGHT   | 将当前标题升/降级                                  |
+| M-S-LEFT/RIGHT | 将子树升/降级                                      |
+| M-S-UP/DOWN    | 将子树上/下移动                                    |
+| C-c *          | 将本行设为标题或者正文                             |
+| C-c C-w        | 将子树或者区域移动到另一个标题处                   |
+| C-c C-x b      | 在新缓冲区显示当前分支                             |
+| C-c /          | 只列出包含搜索结果的大纲，并高亮，支持多种搜索方式 |
+
+
+
 ** [#B] magit-mode
 *** 常规操作
 | command | explain                                               | order |
