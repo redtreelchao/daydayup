@@ -1,3 +1,4 @@
+
 #+TITLE :learn spacemacs
 #+FILETAGS :test:study:emacs:
 #+SEQ_TODO: REPORT(r) BUG(b) | FIXED(f)
@@ -12,9 +13,9 @@
 在打开emacs之前先修改.emacs.d/init.el添加 如下代码。之后将代码调整到.spacemacs 的user-init()里面
  #+BEGIN_SRC emacs-elisp
  (setq configuration-layer--elpa-archives
-         '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
-           ("org-cn"   . "http://elpa.zilongshanren.com/org/")
-           ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/"))
+         '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+           ("org-cn"   . "http://elpa.emacs-china.org/org/")
+           ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/"))
          )
  #+END_SRC
 
@@ -108,3 +109,4 @@ https://www.baidu.com/img/baidu_jgylogo3.gif
 | F       | 进入Pull模式                                          |     3 |
 *** 安装步骤
     在.spacemacs中的dotspacemacs-configuration-laryers添加插件:git/version-control，即可。
+    
