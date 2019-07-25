@@ -1,6 +1,7 @@
 #+STARTUP overview
 #+TITLE: The Org Manual(Org 手册)
 #+CATEGORY: 手册, 翻译
+#+AUTHOR: 李超
 #+URL： https://orgmode.org/org.html
 * Introduction
 - Summary: Brief summary of what Org does. 摘要：关于 Org 可以用来做什么的简明摘要.
@@ -26,3 +27,8 @@ Org files can serve as a single source authoring system with export to many diff
 Org 文件可以用作于单一源码创作系统，可以导出成不同格式的文件，如 HTML，LaTeX, Open Document, 和 Markdown。新的导出可以源自已经存在的或者从 0 开始。
 
 Org files can include source code blocks, which makes Org uniquely suited for authoring technical documents with code examples. Org source code blocks are fully functional; they can be evaluated in place and their results can be captured in the file. This makes it possible to create a single file reproducible research compendium.
+
+Org 文件可以包含代码块，这让 Org 成为了特别适用于创作带有代码样例的技术文档。Org 的代码块功能强悍，他们可以就地执行而且也可以可以在文件中获取结果。这让创建一个可复制研究概要成为可能。
+
+Org keeps simple things simple. When first fired up, it should feel like a straightforward, easy to use outliner. Complexity 
+is not imposed, but a large amount of functionality is available when needed. Org is a toolbox. Many users actually run only a -very personal- fraction of Org's capabilities, and know that there is more whenever they need it.
