@@ -1,0 +1,14 @@
+#+STARTUP overview
+* Introduction
+- Summary: Brief summary of what Org does.
+- 摘要：关于 Org 可以用来做什么的简明摘要.
+- Installation: Installing Org.
+- 安装：安装 Org.
+- Activation: How to activate Org for certain buffers.
+- 激活：如何在特定缓存中激活 Org.
+- Feedback: Bug reports, ideas, patches, etc.
+- 反馈：错误，想法，补丁等等.
+- Conventions: Typesetting conventoins used in this manual.
+- 惯例：手册中使用的排版惯例
+** Summary 摘要
+Org is a mode for keeping notes, maintaining TODO lists, and project planning with a fast and effective plain-text markup language. It also is an authoring system with unique for literate programing and reproducible research.
