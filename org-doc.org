@@ -30,5 +30,39 @@ Org files can include source code blocks, which makes Org uniquely suited for au
 
 Org 文件可以包含代码块，这让 Org 成为了特别适用于创作带有代码样例的技术文档。Org 的代码块功能强悍，他们可以就地执行而且也可以可以在文件中获取结果。这让创建一个可复制研究概要成为可能。
 
-Org keeps simple things simple. When first fired up, it should feel like a straightforward, easy to use outliner. Complexity 
-is not imposed, but a large amount of functionality is available when needed. Org is a toolbox. Many users actually run only a -very personal- fraction of Org's capabilities, and know that there is more whenever they need it.
+Org keeps simple things simple. When first fired up, it should feel like a straightforward, easy to use outliner. Complexity is not imposed, but a large amount of functionality is available when needed. Org is a toolbox. Many users actually run only a -very personal- fraction of Org's capabilities, and know that there is more whenever they need it.
+
+Org 让简单的事情保持简单。当刚开始使用时，它让你感觉是一个直接且简单的大纲列表。不强加复杂性，但是有大量的功能可用。Org 像是一个工具箱。很多人实际上只运行 Org 强大能力中的个人了解的一部分，要了解 Org 有更多功能，需要时即可使用。
+
+All of this is achieved with strictly plain text files, the most portable and future-proof file format. Org runs in Emacs. Emacs is one of the most widely ported programs, so that Org mode is available on every major platform.
+
+所有这些都是通过严格的文本文件实现的，文本文件是最可移植和最有前瞻性的文件格式。Org 运行在 Emacs 中。Emacs 是使用最广泛的可移植性程序，所有 Org mode 可以在所有主流平台获取到。
+
+There is a website for Org which provides links to the newest version of Org, as well as additional information, frequently asked questions(FAQ), links to tutorials, etc. This page is located at https://orgmode.org.
+
+有一个 Org 的网站，提供 Org 的最新版本，也有最新的消息，常见问题（FAQ），教程的链接等等。当前页面的网址是：https://orgmode.org.
+
+An earlier version (7.3) of this manual is available as a _paperback book from Network Theory Ltd_.  更早版本（7.3）的手册可以在 xxx 获取到。
+** Installation 安装
+Org is included in all recent distributions of GNU Emacs, so you probably do not need to install it. Most users will simply activate Org and begin exploring its many features.
+
+Org 在最近的 GNU Emacs 中都有的，所以你应该不需要安装它。很多人会简单的使用 Org 且开始研究它的一些特性。
+
+If, for one reason or another, you want to install Org on top of this pre-packaged version, there are three ways to do it:
+
+如果，由于某种原因，你想安装 Org，有三种方式：
+
+ - by using the Emacs package system: 使用 Emacs 的包管理
+ - by downloading Org as an archive; or 下载 Org 安装包
+ - by using Org's git repository. 使用 Org 的 git 库
+We *strongly recommend* sticking to a single installation method.
+
+我们强烈建议坚持使用一种安装方法。
+
+*Using Emacs packaging system* *使用 Emacs 包管理*
+
+Recent Emacs distributions include a packaging system which lets you install Elisp libraries. You can install Org with /M-x package-install RET org/.
+
+
+
+
