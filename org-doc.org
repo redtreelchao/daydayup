@@ -63,6 +63,21 @@ We *strongly recommend* sticking to a single installation method.
 
 Recent Emacs distributions include a packaging system which lets you install Elisp libraries. You can install Org with /M-x package-install RET org/.
 
+最近的 Emacs 版本包括了一个包系统，它可以让你安装 Elisp 的包。你可以用命令 /M-x package-insntall RET org/ 来安装 Org。
 
+  *Important:* You need to do this in a session where no '.org' file has been visited. i.e., where no Org built-in function have been loaded.
+  Otherwise autoload Org functions will mess up the installation.
+
+  *重点:* 在没有'.org'的文件被访问过时，你需要在一个会话中做。例如，Org 的内部方法还没有被加载。否则，自动加载 Org 方法会扰乱安装。
+
+If you want to use Org's package repository, check out the _Org ELPA page_. 如果你要用 Org 的库，访问 _Org ELPA_ 页面。
+
+*Downloading Org as an archive* *下载 Org 安装包*
+
+You can download Org latest release from _Org's website_. In this case, make sure you set the load-path correctly in your Emacs init file:
+
+你可以从 _Org's 网站_ 下载 Org 的最新发布版本。这种情况下，你要确保你 Emacs 初始化文件里的 load-path 的设置是正确的。
+
+<e
 
 
