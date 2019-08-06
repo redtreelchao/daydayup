@@ -1,4 +1,3 @@
-#+STARTUP overview
 #+TITLE: The Org Manual(Org 手册)
 #+CATEGORY: 手册, 翻译
 #+AUTHOR: 李超
@@ -157,5 +156,72 @@ which selects Org mode for this buffer no matter what the file's name is. See al
 Many commands in Org work on the region if the region is /active/. To make use of this, you need to have `transient-mark-mode` turned on, which is the default. If you do not like `transient-mark-mode`, you can create an active region by using the mouse to select a region, or pressing /C-SPC/ twice before moving point.
 
 Org 的许多命令在某个的激活区域可用。为了让它生效，你需要把'transient-mark-mode'开启，而这个变量默认是开启的。如果你不喜欢'transient-mark-mode', 你可以通过鼠标选择一个区域来创建一个激活的区域，或者在移动光标之前按下/C-SPC/两次。
+** Feedback 反馈
+If you find problems with Org, or if you have questions, remarks, or ideas about it, please send an email to the Org mailing list _emacs-orgmode@gnu.org_. You can subscribe to the list _from this web page_. If you are not a member of the mailing list, your mail will be passed to the list after a moderator has approved it.
+
+如果你发现的 Org 的错误，或者你有疑问、评论、想法，请发给邮件到 Org 的邮件列表 _emacs-orgmode@gnu.org_. 你也可以从这个网页来订阅列表。如果你不是邮件列表的一员，你的邮件在仲裁认可后会转到列表。
+
+For bug reports, please first try to reproduce the bug with the latest version of Org available -- if you are running an outdated version, it is quite possible that the bug has been fixed already. If the bug persists, prepare a report and provides as much information as possible, including the version information of Emacs (/M-x emacs-version/) and Org (/M-x org-version/), as well as the Org related setup in the Emacs init file. The easier way to do this is to use the command
+
+如果要报告 bug，请先尝试用最新版本重现 bug（如果有当前用的是老版本的话），很有可能这个 bug 已经被修复了。如果 bug 依然存在，准备一个报告且提供尽可能多的信息，包含 Emacs 的版本(/M-x emacs-version/)和 Org 的版本(/M-x org-version/)，以及 Emacs 的初始化文件中 Org 相关的配置。比较简单的办法是使用下面的命令
+
+#+BEGIN_src
+M-x org-submit-bug-report <RET>
+#+END_src
+
+which puts all this information into an Emacs mail buffer so that you only need to add your description. If you are not sending the Email from whithin Emacs, please copy and paste the content into your Email program.
+
+这个命令会把所有的信息放入缓存中，因此你只需要填写自己的描述即可。如果你不是使用 Emacs 发送邮件，你可以把缓存的内容复制粘贴到你的邮件中。
+
+Sometimes you might face a problem due to an error in your Emacs or Org mode setup. Before reporting a bug, it is very helpful to start Emacs with minimal customizations and reproduce the problem. Doing so often helps you determine if the problem is with your customization or with Org mode itself. You can start a typical minimal session with a command like the example below.
+
+一般情况下，你遇到的问题是由于你的 Emacs 或者 Org 配置的错误。在报告 bug 之前，行之有效的办法是用最小化的自定义配置启动 Emacs，再来重现问题。这么做会帮你做出决定，这个问题是否是跟你的自定义配置或者 Org 模式相关。你可以用下面的命令来启动典型的最小化启动会话。
+#+BEGIN_src
+$ emacs -Q -l /path/to/minial-org.el
+#+END_src
+
+However if you are using Org mode as distributed with Emacs, a mimimal setup is not necessary. In that case it is sufficient to start Emacs as `emacs -Q`. The `minimal-org.el` setup file can have contents as shown below.
+
+然而，如果你是在 Emacs 中使用 Org 模式，最小化的配置不必需的。那样用命令 'emacs -Q' 来启动 Emacs 就足够了。配置文件'minimal-org.el'可以有如下内容。
+
+#+BEGIN_src
+;;; Minimal setup to load latest `org-mode`.
+
+;; Activate debugging.
+(setq debug-on-error t
+      debug-on-signal nil
+      debug-on-quit nil)
+
+;; Add latest Org mode to load path.
+(add-to-list 'load-path (expand-file-name "/path/to/org-mode/lisp"))
+(add-to-list 'load-path (expand-file-name "/path/to/org-mode/contrib/lisp" t))
+#+END_src
+
+If an error occurs, a "backtrace" can be very useful--see below on how to create one. Often a small example file helps, along with clear information about:
+
+如果出错了，“回溯”是很有用的--下面给出了如何创建。通常，随着下面的信息变的清晰，一个小的样例文件也是有帮助的。
+1. What exactly did you do? 你到底做了啥？
+2. What did you expect to happen? 你期望发生什么？
+3. What happened instead? 实际上发生了什么？
+Thank you for helping to improve this program. 感谢帮助提升程序。
+
+*How to create a useful backtrace*
+
+If working with Org produces an error with a message you do not understand, you may have hit a bug. The best way to report this is by providing, in addition to what was mentioned above, a backtrace. This is information from the built-in debugger about where and how an error occured. Here is how to produce a useful backtrace:
+
+如果 Org 产生一个错误，而提示信息以不理解，那么你可能遇到了一个 bug。报告这个 bug 除了上面提到之外，最好的方法就是提供一个回溯。由自带的 debugger 提供的关于，在哪里/如何发生的信息。这里给出一个如何生成有用的回溯：
+1. Reload uncompiled versions of all Org mode Lisp files. The backtrace contains much more information if it is produced with uncompiled code. To do this, use
+1. 重新加载所有未编译 Org 模式的 Lisp 文件。未编译的代码回溯会包含更多信息。要这么做，用命令：
+#+BEGIN_quote
+C-u M-x org-reload <RET>
+#+END_quote
+or, from the menu: Org-> Refresh/Reload -> Reload Org uncompiled. 或者从菜单：Org->Refresh/Reload->Reload Org uncompiled.
+2. Then, activate the debugger: 然后，激活 debugger：
+#+BEGIN_quote
+M-x togger-debug-or-error <RET>
+#+END_quote
+3. Do whatever you have to do to hit the error. Do not forget to document the steps you take. 尽可能的碰到这个错误，记得记录下你的步骤。
+4. When you hit the error, a "Backtrace" buffer appears on the screen. Save this buffer to a file -- for example using /C-x c w/ -- and attach
+
 
 
