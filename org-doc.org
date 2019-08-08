@@ -1,3 +1,4 @@
+
 #+TITLE: The Org Manual(Org 手册)
 #+CATEGORY: 手册, 翻译
 #+AUTHOR: 李超
@@ -210,18 +211,98 @@ Thank you for helping to improve this program. 感谢帮助提升程序。
 If working with Org produces an error with a message you do not understand, you may have hit a bug. The best way to report this is by providing, in addition to what was mentioned above, a backtrace. This is information from the built-in debugger about where and how an error occured. Here is how to produce a useful backtrace:
 
 如果 Org 产生一个错误，而提示信息以不理解，那么你可能遇到了一个 bug。报告这个 bug 除了上面提到之外，最好的方法就是提供一个回溯。由自带的 debugger 提供的关于，在哪里/如何发生的信息。这里给出一个如何生成有用的回溯：
-1. Reload uncompiled versions of all Org mode Lisp files. The backtrace contains much more information if it is produced with uncompiled code. To do this, use
-1. 重新加载所有未编译 Org 模式的 Lisp 文件。未编译的代码回溯会包含更多信息。要这么做，用命令：
+1.Reload uncompiled versions of all Org mode Lisp files. The backtrace contains much more information if it is produced with uncompiled code. To do this, use
 #+BEGIN_quote
 C-u M-x org-reload <RET>
 #+END_quote
 or, from the menu: Org-> Refresh/Reload -> Reload Org uncompiled. 或者从菜单：Org->Refresh/Reload->Reload Org uncompiled.
-2. Then, activate the debugger: 然后，激活 debugger：
+2.Then, activate the debugger:
 #+BEGIN_quote
 M-x togger-debug-or-error <RET>
 #+END_quote
-3. Do whatever you have to do to hit the error. Do not forget to document the steps you take. 尽可能的碰到这个错误，记得记录下你的步骤。
-4. When you hit the error, a "Backtrace" buffer appears on the screen. Save this buffer to a file -- for example using /C-x c w/ -- and attach
+3.Do whatever you have to do to hit the error. Do not forget to document the steps you take.
+4.When you hit the error, a "Backtrace" buffer appears on the screen. Save this buffer to a file -- for example using /C-x c w/ -- and attach it to your bug report.
+1.重新加载所有未编译 Org 模式的 Lisp 文件。未编译的代码回溯会包含更多信息。要这么做，用命令：
+#+BEGIN_quote
+C-u M-x org-reload <RET>
+#+END_quote
+或者从菜单：Org->Refresh/Reload->Reload Org uncompiled.
+2.然后，激活 debugger：
+#+BEGIN_quote
+M-x togger-debug-or-error <RET>
+#+END_quote
+3.尽可能的碰到这个错误，记得记录下你的步骤。
+4.当你遇到问题时，会有“回溯”缓存显示在页面上。将缓存保存为文件（命令 /C-x C-w/ ），再将它加到你的 bug 报告中。
+** Typesetting Conventions Used in this Manual
+*TODO keywords, tags, properties, etc.*
+*TODO 关键字，标签，属性，等等*
+Org uses various syntactical elements: TODO keywords, tags, property names, keywords, blocks, etc. In this manual we use the following conventions:
+
+Org 使用不同的语法元素：TODO 关键字，标签，属性名，关键字，块，等等。在手册中，我们使用如下排版：
+
+'TODO' 'WAITING' TODO keywords are written with all capticals, even if they are user-defined.
+
+'TODO' 'WAITING' TODO 关键字写成全大写，即使是用户定义的。
+
+'boss' 'ARCHIVE' Tags are case-sensitive. User-defined tags are written in lowercase; built-in tags with special meaning are written as they should appear in the document, usually with all capticals.
+
+'boss' 'ARCHIVE' 标签是大小写敏感的。用户定义的标签写为小写；有特殊意思的内部标签写为大写。
+
+'Release' 'PRIORITY' User-defined properties are captilized; built-in properties with special meaning are written with all capitals.
+
+'Release' 'PRIORITY' 用户定义的属性是大写的；有特殊意义内部的属性写为大写。
+
+'TITLE' 'BEGIN'...'END' Keywords and blocks are written in uppercase to enhance their readability, but you can use lowercase in your Org files.
+
+'TITLE' 'BEGIN' ... 'END' 关键字写为大写来增强可读性，但是你可以在你的 Org 文件中写为小写。
+
+*Key bindings and commands*
+
+*按键的绑定与命令*
+
+The manual lists both the keys and the corresponding commands for accessing a functionality. Org mode often uses the same key for different functions, depending on context. The command that is bound to such keys has a generic name, like /org-metaright/. In the manual we will, wherever possible, give the function that is internally called by the generic command. For example, in the chapter on document structure, /M-RIGHT/ will be listed to call /org-do-demote/, while in the chapter on tables, it will be listed to call /org-table-move-column-right/.
+
+手册列出了按键和相应的命令来访问功能。Org 模式通常使用同样的按键代表不同的功能，这取决于上下文。绑定到这种按键命令有同样的属名，像 /org-metaright/. 在手册中，只要有可能，我们会让内部方式使用属名式命令。例如，在文档结构章节， /M-RIGHT/ 被列出来调用 /org-do-demote/，而在表格章节，它会被列出来调用 /org-table-move-column-right/.
+
+* Document Structure 文档结构
+Org is an outliner. Outlines allow a document to be organized in a hierarchical structure, which least for me, is the best representation of notes and thoughts. An overview of this structure is achieved by folding, i.e., hiding large parts of the document to show only the general document structure and the parts currently being worked on. Org greatly simplifies the use of outlines by compressing the entire show and hide functionalities into a single command, /org-cycle/, which is bound to the /TAB/ key.
+
+Org 是大纲编辑器。大纲使文件可以按照等级结构进行组织，至少对我来说，这是做笔记和想法的最好展示方式。例如通过折叠，隐藏文档中大部分内容，只展示大概的文档结构和部分当前工作区，这使得一个全面的结构化得以实现。Org 大大简化大纲的使用， 通过一个命令 /org-cycle/ 压缩整体展示和隐藏功能， 它绑定键是 /TAB/。
+
+- Headlines:          How to typeset Org tree headlines.
+- Visiblity Cycling:  Show and hide, much simplified.
+- Motion:             Jumping to other headlines.
+- Structure Editing:  Changing sequence and level of headlines.
+- Sparse Trees:       Matches embedded in context.
+- Plain Lists:        Additional structure within an entry.
+- Drawers:            Tucking stuff away.
+- Blocks:             Folding blocks.
+- Creating Footnotes: How footnotes are defined in Org's syntax.
 
 
+- 标题：             如何排版 Org 的树形标题。
+- 可视化循环：      展示和隐藏，很简化。 
+- 移动：             跳转到其他标题。
+- 结构的编辑：      改变序列和标题的等级。
+- 稀疏的树：        上下文中内置匹配。
+- 文本列表：        条目内的附加结构。
+- 抽屉：            把东西塞起来。
+- 块：               折叠块。
+- 创建脚注：        如何用 Org 的语法定义脚注。
 
+** Headlines
+Headlines define the structure of an outline tree. The headlines in Org start with one or more stars, on the left margin. For example:
+
+标题定义了大纲树的结构。Org 中的标题以一个或者多个星号开头，写在左边。例如：
+
+#+BEGIN_EXAMPLE
+ * Top level headline
+ ** Second level
+ *** Third level
+some text
+ *** Third level
+more text
+ * Another top level headline
+#+END_EXAMPLE
+
+The name defined in 'org-footnote-section'
