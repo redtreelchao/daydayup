@@ -305,4 +305,51 @@ more text
  * Another top level headline
 #+END_EXAMPLE
 
-The name defined in 'org-footnote-section'
+The name defined in 'org-footnote-section' is reserved. Do not use it as a title for your own headings.
+
+在'org-footnote-section'中定义的名称是保留关键字。不要在你的标题中使用它们。
+
+Some people find the many starts too noisy  and would prefer an outline that has whitespace followed by a single star as headline starters. See _Clean View_.
+
+有人觉得太多的星号太烦人，宁愿用空白后面加一个星号的方式作为标题的开始来表示大纲。参见 _Clean View_.
+
+An empty line after the end of a subtree is considered part of it and is hidden when the subtree is folded. However, if you leave at least two empty lines, one empty line remains visible after holding the subtree, in order to structure the collapsed 
+view. See the variable 'org-cycle-separator-lines' to modify this behavior.
+
+子树末尾的一个空白行，会被认为是子树的一部分。会随着子树的折叠而隐藏。然而，如果有至少两个空白行，为了构造折叠视图，子树依然占有一个空白行。参见变量 'org-cycle-separator-lines' 可修改此行为。
+
+** Visiblity Cycling 循环可视
+- Global and local cycling: Cycling through various visibility states.
+- Initial visibility: Setting the initial visibility state.
+- Catching invisible edits: Preventing mistakes when editing invisible parts.
+
+- 全局和局部循环：通过不同的可视状态来循环。
+- 初始化可视：设置初始可视状态。
+- 捕捉不可视编辑：防止编辑不可视部分的出错。
+
+*** Global and local cycling 全局和局部循环
+Outlines make it possible to hide parts of the text in the buffer. Org uses just two commands, bound to /TAB/ and /S-TAB/ to change the visibility in the buffer.
+
+大纲让缓存中的文本可以部分隐藏成为可能。Org 只使用两个命令，绑定到 /TAB/ 和 /S-TAB/ 来改变缓存中的可见部分。
+
+/TAB(org-cycle)/
+
+/Subtree cycling/. Rotate current subtree amoung the states. /子树循环/。轮询当前子树的状态
+
+#+BEGIN_QUOTE
+,-> FOLDED -> CHILDREN -> SUBTREE --,
+,___________________________________,
+#+END_QUOTE
+Point must be on a headline for this to work. 光标一定要放在标题上才会生效。
+
+/S-TAB(org-global-cycle)/
+
+/C-u TAB/
+
+/Global cycling/. Rotate the entire buffer amoung the states. /全局循环/. 轮询整体缓存的状态
+
+#+BEGIN_QUOTE
+,-> OVERVIEW -> CONTENTS -> SHOW ALL --,
+,______________________________________,
+#+END_QUOTE
+
