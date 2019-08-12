@@ -10,7 +10,7 @@
     CLOSED: [2016-08-11 周四 14:04]
     - State "DONE"       from              [2016-08-11 周四 14:04] \\
       done done done
-在打开emacs之前先修改.emacs.d/init.el添加 如下代码。之后将代码调整到.spacemacs 的user-init()里面
+在打开 emacs 之前先修改.emacs.d/init.el 添加 如下代码。之后将代码调整到.spacemacs 的 user-init()里面
  #+BEGIN_SRC emacs-elisp
  (setq configuration-layer--elpa-archives
          '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
@@ -22,18 +22,18 @@
 *** TODO 常用命令
 
 **** 重新启动配置文件的命令: M-m q r
-**** Emacs·窗口最大的toggle:M-f10，命令：toggle-frame-maximized
+**** Emacs·窗口最大的 toggle:M-f10，命令：toggle-frame-maximized
 **** 安装插件
-在.spacemacs中的dotspacemacs-configuration-laryers添加插件，即可。
+在.spacemacs 中的 dotspacemacs-configuration-laryers 添加插件，即可。
 **** 插件在哪？
 
 ** TODO [#A] org-mode :: 
 下面是搜集来的网络文章链接
-- [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html][神器中的神器org-mode之入门篇]]
-- [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034][ORG-MODE入门]]
+- [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html][神器中的神器 org-mode 之入门篇]]
+- [[http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034][ORG-MODE 入门]]
 - [[http://orgmode.org/orgcard.txt][Org-Mode Reference Card (for version 7.8.11)]]
 
-*** 内容元数据，如BEGIN_SRC
+*** 内容元数据，如 BEGIN_SRC
 #+BEGIN_SRC 
 s    #+begin_src ... #+end_src 
 e    #+begin_example ... #+end_example  : 单行的例子以冒号开头
@@ -60,7 +60,7 @@ I    #+include: line
 *** keybindings
 | keybinding      | means                               | order |
 |-----------------+-------------------------------------+-------|
-| TAB             | 跳列。在一行的尾部，TAB可以增加一行 |     0 |
+| TAB             | 跳列。在一行的尾部，TAB 可以增加一行 |     0 |
 | S-TAB           | 反向跳列                            |     0 |
 | C-c 竖线        | 生成表格,(5x2)                      |     2 |
 | C-RET           | 生成同级标题                        |     2 |
@@ -85,7 +85,7 @@ https://www.baidu.com/img/baidu_jgylogo3.gif
 | 快捷键         | 说明                                               |
 |----------------+----------------------------------------------------|
 | M-RET          | 插入一个同级别的标题                               |
-| M-S-RET        | 插入一个同级别的TODO标题                           |
+| M-S-RET        | 插入一个同级别的 TODO 标题                           |
 | M-LEFT/RIGHT   | 将当前标题升/降级                                  |
 | M-S-LEFT/RIGHT | 将子树升/降级                                      |
 | M-S-UP/DOWN    | 将子树上/下移动                                    |
@@ -100,13 +100,13 @@ https://www.baidu.com/img/baidu_jgylogo3.gif
 *** 常规操作
 | command | explain                                               | order |
 |---------+-------------------------------------------------------+-------|
-| M-m g s | 查看当前git项目的status                               |     1 |
-| s       | 在magit status buffer中，stage 一个文件               |     2 |
-| S       | 如上，stage所有unstage文件                            |     3 |
-| c       | commit,填写message。然后按：C-c C-c保存，并进入下一步 |     1 |
+| M-m g s | 查看当前 git 项目的 status                               |     1 |
+| s       | 在 magit status buffer 中，stage 一个文件               |     2 |
+| S       | 如上，stage 所有 unstage 文件                            |     3 |
+| c       | commit,填写 message。然后按：C-c C-c 保存，并进入下一步 |     1 |
 | c       | the same.                                             |     3 |
-| P       | 进入Push to remote模式                                |     3 |
-| F       | 进入Pull模式                                          |     3 |
+| P       | 进入 Push to remote 模式                                |     3 |
+| F       | 进入 Pull 模式                                          |     3 |
 *** 安装步骤
-    在.spacemacs中的dotspacemacs-configuration-laryers添加插件:git/version-control，即可。
+    在.spacemacs 中的 dotspacemacs-configuration-laryers 添加插件:git/version-control，即可。
     

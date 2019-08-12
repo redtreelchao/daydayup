@@ -1,31 +1,62 @@
-#+TITLLE: 虫妈邻里团小程序
-* 微信小程序
-使用微信小程序来开发新的虫妈小程序业务。
-** 账号信息
-账号：
-密码：
-APP_ID:
-APP_SECRECT:
+#+TITLE: 虫妈邻里团小程序
+#+SEQ_TODO: REPORT(r) BUG(b) | FIXED (f)
+#+SEQ_TODO: TODO(!T) | DONE(D@) | CANCELED(C@!)
+* 优先读
+- 以下划线标注的内容为变更项。
+- 是为 _上海圣甲虫电子商务有限公司_ 创建的小程序，下面简称“公司”。
+- 在大鱼接龙的基础上开发新的小程序。
+* TODO 微信小程序
+小程序的创建，基本微信的确定。名字，认证，logo，etc.
+- 账号： _cmllt@mmchong.com_
+- 密码： _TODO_
+- APP_ID: _wx3c86e272f241f52b_
+- APP_SECRECT: _TODO_
 * 微信商户
-使用原圣甲虫公司的微信商户。启用的服务应该都有启用，需做检测，检测项有：
+微信商户的网址：pay.weixin.qq.com
+** TODO 商户信息
+涉及的商户信息有：
+- 商户号： _1225374901_
+- 证书： _TODO_
+- 秘钥： _TODO_
+** TODO 商户服务信息
+启用的服务应该都有启用，需做检测，检测项有：
 - 绑定小程序
 - 提现到余额
 - 提现到银行卡
-- 
+* 微信开放平台 
+网址：http://open.weixin.qq.com 微信开放平台中的三方平台会启用 union_id
+** 在三方平台上绑定小程序
+
 * 服务器(阿里云)
-** WEB 服务器
-** DB 服务器
-** 域名
+** TODO WEB 服务器
+** TODO DB 服务器
+** TODO 域名
 域名定义，基于各个服务应用而定义
 - 接龙后台域名：mmc.admin.qujielongcom
 - 小程序接口域名：mmc.jlapi.qujielong.com 和 mmc.jlapi2.qujielong.com
 - 小程序 WS 域名：mmc.ws.qujielong.com
 - 图片存储域名：mmc.qiniu.qujielong.com 和 mmc.qinius.qujielong.com
-** SSL 证书
+** TODO SSL 证书
 在阿里云申请 SSL 证书，涉及的域名有：
 - mmc.qinius.qujielong.com
 - mmc.jlapi2.qujielong.com
 - mmc.jlapi.qujielong.com
 - mmc.ws.qujielong.com
-* 
+* 代码库
+在 coding.net 上启用新的版本库，前缀： _jlmmc_.涉及到代码库项目有：
 
+| 名称                   | 前缀            | 定义             |
+|------------------------+-----------------+------------------|
+| 接龙后台               | _jlmmc-admin_   | 接龙的管理后台   |
+| 小程序前台             | _jlmmc-fronend_ | 接龙的小程序代码 |
+| 接龙定时脚本/websocket | _jlmmc-api_     | 定时/websocket   |
+| 小程序 API（swoole）   | _jlmmc-swoole_  | 小程序接口       |
+
+* 项目初始化
+** TODO 程序配置
+基本上所有的代码库都涉及到配置的变更。参见代码库的
+** TODO 默认图片的上传与配置
+** TODO DB 初始化
+- 库和账号的创建
+- 表结构的初始化
+- 表数据的初始化
