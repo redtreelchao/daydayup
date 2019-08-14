@@ -1,33 +1,50 @@
 #+TITLE: 虫妈邻里团小程序
-#+SEQ_TODO: REPORT(r) BUG(b) | FIXED (f)
 #+SEQ_TODO: TODO(!T) | DONE(D@) | CANCELED(C@!)
 * 优先读
 - 以下划线标注的内容为变更项。
 - 是为 _上海圣甲虫电子商务有限公司_ 创建的小程序，下面简称“公司”。
 - 在大鱼接龙的基础上开发新的小程序。
-* TODO 微信小程序
+* DONE 微信小程序
+  CLOSED: [2019-08-14 周三 14:49]
+  - State "DONE"       from "TODO"       [2019-08-14 周三 14:49]
 小程序的创建，基本微信的确定。名字，认证，logo，etc.
 - 账号： _cmllt@mmchong.com_
-- 密码： _TODO_
+- 密码： _KEEPASS_
 - APP_ID: _wx3c86e272f241f52b_
-- APP_SECRECT: _TODO_
-* 微信商户
+- APP_SECRECT: _KEEPASS_
+- 管理员：高亚敏
+* DONE 微信商户
+  CLOSED: [2019-08-14 周三 14:51]
+  - State "DONE"       from "TODO"       [2019-08-14 周三 14:51]
 微信商户的网址：pay.weixin.qq.com
-** TODO 商户信息
+** DONE 商户信息
+   - State "DONE"       from              [2019-08-14 周三 14:31]
 涉及的商户信息有：
 - 商户号： _1225374901_
-- 证书： _TODO_
-- 秘钥： _TODO_
-** TODO 商户服务信息
+- 证书： _[[http://jira.mamachong.com/browse/WX-412][JIRA-WX-412]]_
+- 秘钥： _[[http://jira.mamachong.com/browse/WX-412][JIRA-WX-412]]_
+** DONE 商户服务信息
+   CLOSED: [2019-08-14 周三 14:51]
+   - State "DONE"       from "DONE"       [2019-08-14 周三 14:51]
+   - State "DONE"       from "TODO"       [2019-08-14 周三 14:51]
 启用的服务应该都有启用，需做检测，检测项有：
 - 绑定小程序
 - 提现到余额
 - 提现到银行卡
-* 微信开放平台 
-网址：http://open.weixin.qq.com 微信开放平台中的三方平台会启用 union_id
-** 在三方平台上绑定小程序
+* TODO 微信开放平台 
+网址：http://open.weixin.qq.com 。要填写接收 token 等事情，使用接龙后台进行小程序代码的上传、草稿、审核、发布等。
+** DONE 平台信息
+   CLOSED: [2019-08-14 周三 14:58]
+    - State "DONE"       from "TODO"       [2019-08-14 周三 14:58]
+- 名称： _虫妈邻里团 NEW_
+- APPID： _xwx50a905d4680ceb32_
+- APPSECRET/AES_KEY/TOKEN: _KEEPASS_
+** TODO ACCESS_TOKEN 等 
+小程序的授权必须使用 _new.mmchong.com_ 作为域名。
+- 统一使用 cmjl.admin.qujielong.com。工作内容未知。
+- 获取 ticket 的 url：http://web.mmchong.com/Base/User/wx_ticket. 需将 ticket 同步更新到 cmjl 的库
 
-* 服务器(阿里云)
+* TODO 服务器(阿里云)
 ** TODO WEB 服务器
 ** TODO DB 服务器
 ** TODO 域名
@@ -42,7 +59,7 @@
 - mmc.jlapi2.qujielong.com
 - mmc.jlapi.qujielong.com
 - mmc.ws.qujielong.com
-* 代码库
+* TODO 代码库
 在 coding.net 上启用新的版本库，前缀： _jlmmc_.涉及到代码库项目有：
 
 | 名称                   | 前缀            | 定义             |
@@ -52,7 +69,7 @@
 | 接龙定时脚本/websocket | _jlmmc-api_     | 定时/websocket   |
 | 小程序 API（swoole）   | _jlmmc-swoole_  | 小程序接口       |
 
-* 项目初始化
+* TODO 项目初始化
 ** TODO 程序配置
 基本上所有的代码库都涉及到配置的变更。参见代码库的
 ** TODO 默认图片的上传与配置
