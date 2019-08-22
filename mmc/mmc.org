@@ -4,6 +4,14 @@
 - 以下划线标注的内容为变更项。
 - 是为 _上海圣甲虫电子商务有限公司_ 创建的小程序，下面简称“公司”。
 - 在大鱼接龙的基础上开发新的小程序。
+
+#+CAPTICAL: 正式环境、测试环境
+| 项目   | 正式环境值  | 测试环境值     | 备注         |
+| 域名   | mmchong.com | imamachong.com |              |
+| DB 名称 | cmllt-xcx   | cmllt-xcx      | DB 名相同     |
+| 机器   | 4 台机器     | wx-xcx         | 分正式和测试 |
+|        |             |                |              |
+
 * DONE 微信小程序
   CLOSED: [2019-08-14 周三 14:49]
   - State "DONE"       from "TODO"       [2019-08-14 周三 14:49]
@@ -54,12 +62,14 @@
 
 * TODO 服务器(阿里云)
 ** TODO WEB 服务器
-| 服务器   | Master 进程名称 | Master 端口号 | Slave 进程名称 | Slave 端口号 |
-|----------+-----------------+---------------+----------------+--------------|
-| web2.prd | cmllt_sw1       |          5911 | cmllt_sw2      | 5912         |
-| xcx.prd1 | cmllt_sw1       |          5911 | cmllt_sw2      | 5912         |
-| xcx.prd2 | cmllt_sw1       |          5911 | cmllt_sw2      | 5912         |
-| xcx.prd3 | cmllt_sw1       |          5911 | cmllt_sw2      | 5912         |
+| 服务器   | Master 进程名称 | Master 端口号 | Slave 进程名称 | Slave 端口号 | 环境     |
+|----------+-----------------+---------------+----------------+--------------+----------|
+| web2.prd | cmllt_sw1       |          5911 | cmllt_sw2      |         5912 | 正式环境 |
+| xcx.prd1 | cmllt_sw1       |          5911 | cmllt_sw2      |         5912 | 正式环境 |
+| xcx.prd2 | cmllt_sw1       |          5911 | cmllt_sw2      |         5912 | 正式环境 |
+| xcx.prd3 | cmllt_sw1       |          5911 | cmllt_sw2      |         5912 | 正式环境 |
+| wx-xcx   | cmllt_sw1       |          5911 | cmllt_sw2      |         5912 | 测试环境 |
+|          |                 |               |                |              |          |
 
 
 ** DONE DB 服务器
@@ -70,28 +80,49 @@
 - 表名前缀：jl_
 - 账号：cmllt
 - 密码： _KEEPASS_
+
+** DONE 负载均衡
+   CLOSED: [2019-08-22 周四 14:39]
+   - State "DONE"       from "TODO"       [2019-08-22 周四 14:39]
+- cmllt-jlapi-sw1
+- cmllt-jlapi2-sw2
+
 ** TODO 域名
-域名定义，基于各个服务应用而定义
-、- 接龙后台域名：cmllt.admin.mmchong.com
-- 小程序接口域名：cmllt.jlapi.mmchong.com 和 cmllt.jlapi2.mmchong.com
-- 小程序 WS 域名：cmllt.ws.mmchong.com
-- 图片存储域名：cmllt.qiniu.mmchong.com 和 cmllt.qinius.mmchong.com
-** TODO SSL 证书
-在阿里云申请 SSL 证书，涉及的域名有：
-- cmllt.qinius.mmchong.com
-- cmllt.jlapi2.mmchong.com
-- cmllt.jlapi.mmchong.com
-- cmllt.ws.mmchong.com
+域名定义，基于各个服务应用而定义。
+- 域名
+  - 正式环境域名：mmchong.com
+  - 测试环境域名：imamachong.com
+- 子域名
+  - 接龙后台域名：cmllt.admin.域名。配置 IP
+  - 小程序接口域名：cmllt.jlapi.域名 和 cmllt.jlapi2.域名
+  - 小程序 WS 域名：cmllt.ws.域名
+  - 图片存储域名：cmllt.qiniu.域名 和 cmllt.qinius.域名
+- 在阿里云申请 SSL 证书，涉及的域名有：
+  - cmllt.qinius.域名
+  - cmllt.jlapi2.域名
+  - cmllt.jlapi.域名
+- cmllt.ws.域名
+
+* DONE 七牛云存储
+  CLOSED: [2019-08-22 周四 14:49]
+  - State "DONE"       from "TODO"       [2019-08-22 周四 14:49]
+使用原 mmc（圣甲虫）的云账号。
+- 正式 bucket： _cmllt-xcx-prd_
+- 测试 bucket: _mmc-dev_
+- AK/SK: _KEEPASS_
+- 将两个域名，绑定到新的 bucket：
+ - cmllt.qiniu
+ - cmllt.qinius：绑定证书
 
 * TODO 代码库
-在 coding.net 上启用新的版本库，前缀： _jlmmc_.涉及到代码库项目有：
+coding.net 上在原有库上使用新的分支。正式分支名：cmllt-online.
 
-| 名称                   | 前缀            | 定义             |
+| 名称                   | 线上分支          | 定义             |
 |------------------------+-----------------+------------------|
-| 接龙后台               | _jlmmc-admin_   | 接龙的管理后台   |
-| 小程序前台             | _jlmmc-fronend_ | 接龙的小程序代码 |
-| 接龙定时脚本/websocket | _jlmmc-api_     | 定时/websocket   |
-| 小程序 API（swoole）   | _jlmmc-swoole_  | 小程序接口       |
+| 接龙后台               | _cmllt-online_ | 接龙的管理后台   |
+| 小程序前台             | _cmllt-online_ | 接龙的小程序代码 |
+| 接龙定时脚本/websocket | _cmllt-online_ | 定时/websocket   |
+| 小程序 API（swoole）   | _cmllt-online_  | 小程序接口       |
 
 * TODO 项目初始化
 ** TODO 程序配置
