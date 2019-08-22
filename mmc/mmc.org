@@ -31,7 +31,9 @@
 - 绑定小程序
 - 提现到余额
 - 提现到银行卡
-* TODO 微信开放平台 
+* DONE 微信开放平台 
+  CLOSED: [2019-08-22 周四 12:10]
+  - State "DONE"       from "TODO"       [2019-08-22 周四 12:10]
 网址：http://open.weixin.qq.com 。要填写接收 token 等事情，使用接龙后台进行小程序代码的上传、草稿、审核、发布等。
 ** DONE 平台信息
    CLOSED: [2019-08-14 周三 14:58]
@@ -39,26 +41,48 @@
 - 名称： _虫妈邻里团 NEW_
 - APPID： _xwx50a905d4680ceb32_
 - APPSECRET/AES_KEY/TOKEN: _KEEPASS_
-** TODO ACCESS_TOKEN 等 
+** DONE ACCESS_TOKEN 等 
+   CLOSED: [2019-08-22 周四 12:06]
+   - State "DONE"       from "TODO"       [2019-08-22 周四 12:06]
 小程序的授权必须使用 _new.mmchong.com_ 作为域名。
-- 统一使用 cmjl.admin.qujielong.com。工作内容未知。
+- 统一使用 cmjl.admin.mmchong.com。工作内容未知。
 - 获取 ticket 的 url：http://web.mmchong.com/Base/User/wx_ticket. 需将 ticket 同步更新到 cmjl 的库
+** DONE 微信开放平台的实现
+   CLOSED: [2019-08-22 周四 12:09]
+   - State "DONE"       from "TODO"       [2019-08-22 周四 12:09]
+- 使用 new.mmchong.com 配置 cmjl 的 jlb 来实现。原因：申请授权的域名一定要是平台上写的域名，这是由商城和虫妈邻里团而定。
 
 * TODO 服务器(阿里云)
 ** TODO WEB 服务器
-** TODO DB 服务器
+| 服务器   | Master 进程名称 | Master 端口号 | Slave 进程名称 | Slave 端口号 |
+|----------+-----------------+---------------+----------------+--------------|
+| web2.prd | cmllt_sw1       |          5911 | cmllt_sw2      | 5912         |
+| xcx.prd1 | cmllt_sw1       |          5911 | cmllt_sw2      | 5912         |
+| xcx.prd2 | cmllt_sw1       |          5911 | cmllt_sw2      | 5912         |
+| xcx.prd3 | cmllt_sw1       |          5911 | cmllt_sw2      | 5912         |
+
+
+** DONE DB 服务器
+   CLOSED: [2019-08-22 周四 12:23]
+   - State "DONE"       from "TODO"       [2019-08-22 周四 12:23]
+依然使用原有的阿里 DB（prd）。
+- DB 名称： _cmllt-xcx_ 。
+- 表名前缀：jl_
+- 账号：cmllt
+- 密码： _KEEPASS_
 ** TODO 域名
 域名定义，基于各个服务应用而定义
-- 接龙后台域名：mmc.admin.qujielongcom
-- 小程序接口域名：mmc.jlapi.qujielong.com 和 mmc.jlapi2.qujielong.com
-- 小程序 WS 域名：mmc.ws.qujielong.com
-- 图片存储域名：mmc.qiniu.qujielong.com 和 mmc.qinius.qujielong.com
+、- 接龙后台域名：cmllt.admin.mmchong.com
+- 小程序接口域名：cmllt.jlapi.mmchong.com 和 cmllt.jlapi2.mmchong.com
+- 小程序 WS 域名：cmllt.ws.mmchong.com
+- 图片存储域名：cmllt.qiniu.mmchong.com 和 cmllt.qinius.mmchong.com
 ** TODO SSL 证书
 在阿里云申请 SSL 证书，涉及的域名有：
-- mmc.qinius.qujielong.com
-- mmc.jlapi2.qujielong.com
-- mmc.jlapi.qujielong.com
-- mmc.ws.qujielong.com
+- cmllt.qinius.mmchong.com
+- cmllt.jlapi2.mmchong.com
+- cmllt.jlapi.mmchong.com
+- cmllt.ws.mmchong.com
+
 * TODO 代码库
 在 coding.net 上启用新的版本库，前缀： _jlmmc_.涉及到代码库项目有：
 
@@ -73,7 +97,12 @@
 ** TODO 程序配置
 基本上所有的代码库都涉及到配置的变更。参见代码库的
 ** TODO 默认图片的上传与配置
+- 虫妈头像
+- 海报背景
+- 等等
+
 ** TODO DB 初始化
-- 库和账号的创建
-- 表结构的初始化
+- 表结构
+- 存储过程
+- event 事件
 - 表数据的初始化
