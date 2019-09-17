@@ -318,7 +318,7 @@ view. See the variable 'org-cycle-separator-lines' to modify this behavior.
 
 子树末尾的一个空白行，会被认为是子树的一部分。会随着子树的折叠而隐藏。然而，如果有至少两个空白行，为了构造折叠视图，子树依然占有一个空白行。参见变量 'org-cycle-separator-lines' 可修改此行为。
 
-** Visiblity Cycling 循环可视
+ll** Visiblity Cycling 循环可视
 - Global and local cycling: Cycling through various visibility states.
 - Initial visibility: Setting the initial visibility state.
 - Catching invisible edits: Preventing mistakes when editing invisible parts.
@@ -326,7 +326,7 @@ view. See the variable 'org-cycle-separator-lines' to modify this behavior.
 - 全局和局部循环：通过不同的可视状态来循环。
 - 初始化可视：设置初始可视状态。
 - 捕捉不可视编辑：防止编辑不可视部分的出错。
-
+  
 *** Global and local cycling 全局和局部循环
 Outlines make it possible to hide parts of the text in the buffer. Org uses just two commands, bound to /TAB/ and /S-TAB/ to change the visibility in the buffer.
 
@@ -352,5 +352,62 @@ Point must be on a headline for this to work. 光标一定要放在标题上才�
 ,-> OVERVIEW -> CONTENTS -> SHOW ALL --,
 ,______________________________________,
 #+END_QUOTE
+
+When /S-TAB/ is called with a numeric prefix argument N, the CONTENTS view up to headlines of level N are shown. Note that inside tables (see Tables), /S-TAB/ jumps to the previous field instead.
+
+当 /S-TAB/ 被调用且前缀带参数 N，内容会展示到 N 层的标题。注意，内部表格中， /S-TAB/ 会跳到前一个字段。
+
+You can run global cycling using /TAB/ only if point is at the very beginning of the buffer, but not on a headline, and /org-cycle-global-at-bob/ is set to a non-/nil/ value.
+
+你可以执行 /TAB/ 来全局循环，只要光标在缓存的最前面，不是在标题上，且 /org-cycle-global-at-bob/ 的值是非 /nil/ 。
+
+/C-u C-u TAB/ (org-set-startup-visibility)
+
+SWitch back to the startup visiblity of the buffer (see _Initial visibility_) 切回到启动时的可视状态
+
+/C-u C-u C-u TAB/ (outline-show-all)
+
+Show all, including drawers. 显示所有的，包含抽屉。
+
+/C-c C-r/ (org-reveal)
+
+Reveal context around point, showing the current entry, the following heading and the hierarchy above. Useful for working near a location that has been exposed by a sparse tree command (see _Sparse Trees_) or an agenda command (see _Agenda Commands_). With a prefix argument show, on each level, all sibling headings. With a double prefix argument, also show the entire subtree of the parent.
+
+显示出光标的上下文，展示当前的入口，下一个的标题和上面的等级。这个命令在工作区域位置是被稀疏树命令，或日历命令展开时非常有用。如若带前缀参数，在每个级别，所有的子标题。如果有两个前缀参数，依然显示父结点的所有子树。
+
+/C-c C-k/ (outline-show-branches)
+
+Expose all the headings of subtree, CONTENTS view for just one subtree. 展开子树的所有标题， 内容只会展示一个子树的。
+
+/C-c TAB/ (outline-show-children)
+
+Expose all direct of the subtree. With a numeric prefix argument N, expose all children down to level N. 展开子树的所有直接孩子。带数字 N 的前缀，展示所有子的等级到第 N 级。
+
+/C-c C-x b/ (org-tree-to-indirect-buffer)
+
+Show the current subtree in an indirect buffer. With a numeric prefix argument, N, go up to level N and then take that tree. If N is negative then go up that many level. With a /C-u/ prefix, do not remove the previously used indirect buffer.
+
+在非当前的缓存中展示当前的子树。带数字参数 N, 向上到级别 N，然后展示它的树。如果 N 是负值，则向上 N 个等级。带有 /C-u/ 的前缀，不要删除前面用过的非当前缓存。
+
+/C-c C-x v/ (org-copy-visible)
+
+Copy the /visible/ text in the region into the kill ring. 复制可看到的内容区域到删除环。
+
+*** Initial Visibility 初始化可视
+
+When Emacs first visits an Org file, the global state is set to OVERVIEW, i.e., only the top level headlines are visible. This can be configured through the variable /org-startup-folded/, or on a per-file basis by adding one of the following lines anywhere in the buffer.
+
+当 Emacs 第一次访问一个 Org 文件时，全局状态被设置为 OVERVIEW, 只有顶级标题是可见的。这个可通过配置变量 /org-startup-folded/ 来完成，或者 在每个文件任意位置添加下面的一行：
+
+#+BEGIN_SRC
+
+#+STARTUP: overview
+#+STARTUP: content
+#+STARTUP: showall
+#+STARTUP: showeverything
+
+#+END_SRC
+
+Furthermore, any entries with a 'VISIBILITY' property (see _Properties and Columns_) get their visiblity adapted accordingly. Allowed values for this property are 'folded', 'children', 'content', and 'all'.
 
 
